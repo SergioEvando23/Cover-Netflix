@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import Tmdb from '../../Tmdb';
-import useStyles from './Home.style';
+import './Home.css';
+import MovieRow from '../../components/MovieRow/MovieRow';
 
 const Home = ( ) => {
     const [movieList, setMovieList] = useState([]);
-
+    
     useEffect(() => {
         const loadAll = async () => {
           //pegando a lista total
@@ -14,11 +15,15 @@ const Home = ( ) => {
         loadAll();
     }, []);
 
-    const Styles = useStyles();
-
     return (
-        <div style={Styles.Home}>
-          home
+        <div className="home">
+          <section className="lists">
+              {movieList.map((item) =>(
+                  <div key={item.id}>
+                      <MovieRow key={item.id} title={item.title} items={item.items} />
+                  </div>
+              ))}
+          </section>
         </div>
     )
 }
