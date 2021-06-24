@@ -4,7 +4,7 @@ import './MovieRow.css';
 const MovieRow = ({items, title}) => {
     return (
         <div>
-            <h2>{title}</h2>
+            <h2 className="movieRow-title">{title}</h2>
             <div className="movieRow--listArea">
                 <div className="movieRow--list">
                     {items.results.length > 0 && items.results.map((item, key) => (
