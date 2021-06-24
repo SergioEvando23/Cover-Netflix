@@ -1,18 +1,6 @@
-import { KeyboardReturnSharp } from "@material-ui/icons";
 
 const API_KEY = '7d498c0116d3e86a063b6a5ebf312c61';
 const API_BASE = 'https://api.themoviedb.org/3';
-
-/*
-    -originais da netflix
-    -recomendados (trending)
-    -em alta(top rated)
-    -ação
-    -comedia
-    -terror
-    -romance
-    -documentarios
-*/
 
 const basicFetch = async ( endpoint ) => {
     const req = await fetch(`${API_BASE}${endpoint}`);
@@ -20,7 +8,7 @@ const basicFetch = async ( endpoint ) => {
     return json;
 }
 
-export default {
+const API = {
     getHomeList: async() => {
         return [
             {
@@ -92,3 +80,4 @@ export default {
         return info;
     }
 };
+export default API

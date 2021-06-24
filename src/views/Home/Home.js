@@ -1,13 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import Tmdb from '../../Tmdb';
 import './Home.css';
-import MovieRow from '../../components/MovieRow/MovieRow';
-import FeaturedMovie from '../../components/FeaturedMovie/FeaturedMovie';
+import MovieRow from '../../components/MovieRow';
+import FeaturedMovie from '../../components/FeaturedMovie';
+import Header from './../../components/Header';
 
 const Home = ( ) => {
     const [movieList, setMovieList] = useState([]);
     const [featureData, setFeatureData] = useState(null);
-    
+    const [blackHeader, setBlackHeader] = useState(false);
+     
     useEffect(() => {
         const loadAll = async () => {
           //pegando a lista total
@@ -24,8 +26,23 @@ const Home = ( ) => {
         loadAll();
     }, []);
 
+    useEffect(() => {
+        const scrollListener = () => {
+            if (window.scrollY > 150){
+                setBlackHeader(true)
+            } else {
+                setBlackHeader(false)
+            }
+        }
+        window.addEventListener('scroll', scrollListener);
+        return () => {
+            window.removeEventListener('scroll', scrollListener);
+        }
+    }, [])
+
     return (
         <div className="home">
+            <Header black={blackHeader} />
             {featureData && 
                 <FeaturedMovie item={featureData}/>
             }
@@ -36,6 +53,11 @@ const Home = ( ) => {
                     </div>
                 ))}
             </section>
+            <footer> 
+                Feito como prova de conceito por Sérgio Costa.
+                Direitos de imagem para <a href="https://www.netflix.com/browse">Netflix</a>. 
+                Conteudo pego da API disponibilizada pelo site <a href="https://www.themoviedb.org/?language=pt-BR">Themoviedb.org</a>.
+            </footer>
         </div>
     )
 }

@@ -2,3 +2,11 @@
 .lists{
     margin-top: -150px;
 }
+footer{
+    background-color: #181818;
+    color:rgb(73, 73, 73);
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
