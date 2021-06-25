@@ -9,6 +9,11 @@ const FeaturedMovie = ({item}) => {
         genres.push(item.genres[i].name);
     }
 
+    let description = item.overview;
+    if(description.length > 200) {
+        description = description.substring(0, 180 )+'...';
+    }
+
     return (
         <section className="featured" 
             style={{backgroundSize: 'cover', 
@@ -33,7 +38,7 @@ const FeaturedMovie = ({item}) => {
                         </div>
                     </div> 
                     <div  className="featured--description">
-                        {item.overview} 
+                        {description} 
                     </div> 
                     <div  className="featured--buttons">
                         <a className="featured--button--play" href={`/watch/${item.id}`}> &#9658; Assistir </a>
