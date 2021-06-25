@@ -58,6 +58,11 @@ const Home = ( ) => {
                 Direitos de imagem para <a href="https://www.netflix.com/browse">Netflix</a>. 
                 Conteudo pego da API disponibilizada pelo site <a href="https://www.themoviedb.org/?language=pt-BR">Themoviedb.org</a>.
             </footer>
+            { movieList.length <= 0 &&
+                <div className="loading"> 
+                    <img src="https://media.filmelier.com/noticias/br/2020/03/Netflix_LoadTime.gif" alt="carregando" width="550" />
+                </div>
+            }
         </div>
     )
 }
