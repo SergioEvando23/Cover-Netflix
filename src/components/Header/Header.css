@@ -15,12 +15,6 @@ header {
 header.black{
     background-color: #111111;
 }
-.hearder--container--logo{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
 .header--logo{
     height: 25px;
 }
