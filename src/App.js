@@ -4,7 +4,7 @@ import Home from './views/Home/Home';
 
 const App = ( ) => {
   return(
-    <div>
+    <div className="body">
       <Home />
     </div>
   )
