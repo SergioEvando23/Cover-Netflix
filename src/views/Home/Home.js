@@ -29,9 +29,9 @@ const Home = ( ) => {
     useEffect(() => {
         const scrollListener = () => {
             if (window.scrollY > 150){
-                setBlackHeader(true)
+                setBlackHeader(true);
             } else {
-                setBlackHeader(false)
+                setBlackHeader(false);
             }
         }
         window.addEventListener('scroll', scrollListener);

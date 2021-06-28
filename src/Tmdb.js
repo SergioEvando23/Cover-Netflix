@@ -49,17 +49,17 @@ const API = {
             },
             {
                 id:7,
-                slug: 'romance',
-                title: 'Romance',
-                items: await basicFetch(`/discover/movie?with_genres=10749&language=pt-BR&api_key=${API_KEY}`)
-            },
+                slug: 'mystery',
+                title: 'Mistério',
+                items: await basicFetch(`/discover/movie?with_genres=9648&language=pt-BR&api_key=${API_KEY}`)
+            },              
             {
                 id:8,
-                slug: 'documentary',
-                title: 'Documentários',
-                items: await basicFetch(`/discover/movie?with_genres=99&language=pt-BR&api_key=${API_KEY}`)
-            },
-            
+                slug: 'animation',
+                title: 'Animação',
+                items: await basicFetch(`/discover/movie?with_genres=16&language=pt-BR&api_key=${API_KEY}`)
+            },            
+                        
         ];
     },
     getMovieInfo: async( movieId, type ) => {
